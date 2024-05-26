@@ -4,19 +4,12 @@ metadata:
   name: nginx-config
   namespace: homework
 data:
-  nginx.conf: |
-    user nginx;
-    worker_processes  auto;
-    events {
-      worker_connections  1024;
-    }
-    http {
+  nginx.conf: |-
       server {
           listen       8000;
           server_name  localhost;
           location / {
             root   /homework;
-            index  index.html;
+            index  index.html index.htm;
         }
       }
-    }
